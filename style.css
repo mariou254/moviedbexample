@@ -9,7 +9,7 @@ body{
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden;
+    
     background-color: #373b69;
 
 }
@@ -17,6 +17,7 @@ header{
     padding: 1rem;
     display: flex;
     justify-content: flex-end;
+    background-color: #373b40;
 
 }
 .search{
@@ -24,15 +25,28 @@ header{
     border: 2px solid #373b55;
     padding: 0.5rem 1rem;
     border-radius:50px ;
-    color: beige;
+    color:white;
     font-family: inherit;
     font-size: 1rem;
+    background-color: azure;
 
 
 }
 .search:focus{
     background-color:#373b69 ;
 }
+button{
+    background-color: yellow;
+    color: #373b40;
+    border-radius: 3px;
+    height: 50px;
+    font-weight: 100;
+    width: 50px;
+
+
+
+}
+
 main{
     display: flex;
     flex-wrap: wrap;
@@ -92,4 +106,9 @@ main{
 }
 .movie:hover .overview{
     transform: translateY(0);
+}
+footer{
+    margin-top: 10px;
+    color: aliceblue;
+
 }
