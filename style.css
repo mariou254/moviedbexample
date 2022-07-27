@@ -133,3 +133,6 @@ footer{
     cursor: pointer;
 
 }
+.tag.highlight{
+    background-color: red;
+}

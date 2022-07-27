@@ -13,6 +13,7 @@ const form=document.getElementById('form')
 const search = document.getElementById('search')
 const tagsEl=document.getElementById('tags')
 //const button=document.getElementById('go')
+let selectGenre=[]
 setGenere()
 function setGenere(){
     tagsEl.innerHTML=''
@@ -22,9 +23,37 @@ function setGenere(){
         const t=document.createElement('div')
         t.classList.add('tag')
         t.id=genre.id
-        t.innerText=genre.name
+        t.innerText = genre.name
+        t.addEventListener('click', () => {
+            if (selectGenre.length == 0) {
+                selectGenre.push(genre.id)
+            } else {
+                if (selectGenre.includes(genre.id)) {
+                    selectGenre.forEach((id, idx)=> {
+                        if (id == genre.id){
+                            selectGenre.splice(idx,1)
+                        }
+                    })
+                } else {
+                    selectGenre.push(genre.id)
+                }
+            }
+            console.log(selectGenre)
+            getMovies(API_URL + '&with_genres=' + encodeURI(selectGenre.join(',')));
+            selected()
+        })
         tagsEl.appendChild(t)
+        
     })
+}
+function selected() {
+    if (selectGenre != 0) {
+        selectGenre.forEach(id => {
+            const selectTag = document.getElementById(id)
+            selectTag.classList.add('highlight')
+    })
+    }
+    
 }
 getMovies(API_URL)
 
