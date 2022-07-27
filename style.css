@@ -112,3 +112,24 @@ footer{
     color: aliceblue;
 
 }
+#tags {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    font-weight: 300px;
+}
+
+.tag {
+    color: aliceblue;
+    background-color: orange;
+    padding: 10px 15px;
+    border-radius: 50px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+
+}
